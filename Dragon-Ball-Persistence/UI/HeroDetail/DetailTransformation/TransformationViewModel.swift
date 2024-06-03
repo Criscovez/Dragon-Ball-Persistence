@@ -30,7 +30,7 @@ class TransformationViewModel: TransformationProtocol {
     }
     
     func getDescription() -> String {
-        print(transformation.info)
+        print(transformation.info!)
         return transformation.info ?? ""
     }
 }

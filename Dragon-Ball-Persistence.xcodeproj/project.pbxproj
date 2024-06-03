@@ -23,9 +23,7 @@
 		2430661F2B9CB2BE0051446D /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2430661D2B9CB2BE0051446D /* Model.xcdatamodeld */; };
 		243066262B9CF4240051446D /* NSMLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243066202B9CF4240051446D /* NSMLocation.swift */; };
 		243066282B9CF4240051446D /* NSMTransformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243066222B9CF4240051446D /* NSMTransformation.swift */; };
-		2430662A2B9CF4240051446D /* NSMHero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243066242B9CF4240051446D /* NSMHero.swift */; };
 		2430662D2B9CF6A90051446D /* StoreDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2430662C2B9CF6A90051446D /* StoreDataProvider.swift */; };
-		243066302B9DF6700051446D /* Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2430662F2B9DF6700051446D /* Hero.swift */; };
 		243066322B9DF6860051446D /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243066312B9DF6860051446D /* Location.swift */; };
 		243066342B9DF69B0051446D /* Transformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243066332B9DF69B0051446D /* Transformation.swift */; };
 		244836352BD3095A00358AA9 /* HeroesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244836342BD3095A00358AA9 /* HeroesViewModel.swift */; };
@@ -41,6 +39,18 @@
 		2448364F2BD47F8400358AA9 /* HerosListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2448364C2BD47F8400358AA9 /* HerosListController.swift */; };
 		244836522BD5525200358AA9 /* HeroListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 244836512BD5525200358AA9 /* HeroListCell.xib */; };
 		244836532BD5525200358AA9 /* HeroListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244836502BD5525200358AA9 /* HeroListCell.swift */; };
+		244D9C422C053F6500483D35 /* StoreDataProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244D9C412C053F6500483D35 /* StoreDataProviderTests.swift */; };
+		244D9C572C05505F00483D35 /* NSMHero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244D9C492C05505F00483D35 /* NSMHero.swift */; };
+		244D9C5B2C05505F00483D35 /* Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244D9C4E2C05505F00483D35 /* Hero.swift */; };
+		244D9C612C057FFC00483D35 /* ApiProviderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244D9C602C057FFC00483D35 /* ApiProviderTest.swift */; };
+		244D9C642C069A5F00483D35 /* MockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244D9C632C069A5F00483D35 /* MockURLProtocol.swift */; };
+		244D9C662C06B00900483D35 /* MockHeroes.json in Resources */ = {isa = PBXBuildFile; fileRef = 244D9C652C06B00900483D35 /* MockHeroes.json */; };
+		244D9C6A2C06B07F00483D35 /* MockLocations.json in Resources */ = {isa = PBXBuildFile; fileRef = 244D9C692C06B07F00483D35 /* MockLocations.json */; };
+		244D9C6C2C0821FB00483D35 /* MockTransformations.json in Resources */ = {isa = PBXBuildFile; fileRef = 244D9C6B2C0821FB00483D35 /* MockTransformations.json */; };
+		244D9C6E2C0A8A6800483D35 /* HeroesViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244D9C6D2C0A8A6800483D35 /* HeroesViewModelTest.swift */; };
+		244D9C702C0B697300483D35 /* HeroDetailViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244D9C6F2C0B697300483D35 /* HeroDetailViewModelTest.swift */; };
+		244D9C782C0CDEC000483D35 /* Dragon_Ball_PersistenceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244D9C772C0CDEC000483D35 /* Dragon_Ball_PersistenceUITests.swift */; };
+		244D9C7A2C0CDEC000483D35 /* Dragon_Ball_PersistenceUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244D9C792C0CDEC000483D35 /* Dragon_Ball_PersistenceUITestsLaunchTests.swift */; };
 		24B95B6F2BD60E1900E6C123 /* TransformationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B95B6D2BD60E1900E6C123 /* TransformationController.swift */; };
 		24B95B702BD60E1900E6C123 /* TransformationController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24B95B6E2BD60E1900E6C123 /* TransformationController.xib */; };
 		24B95BB12BDC992100E6C123 /* TransformationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B95BAF2BDC992100E6C123 /* TransformationCollectionViewCell.swift */; };
@@ -50,6 +60,23 @@
 		24B95BB92BDE0ED500E6C123 /* TransformationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B95BB82BDE0ED500E6C123 /* TransformationViewModel.swift */; };
 		24E55AAD2B912DBA00EFA8FD /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E55AAC2B912DBA00EFA8FD /* LoginViewModel.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		244D9C432C053F6500483D35 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 240790152B8E8123009F0BE5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2407901C2B8E8123009F0BE5;
+			remoteInfo = "Dragon-Ball-Persistence";
+		};
+		244D9C7B2C0CDEC000483D35 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 240790152B8E8123009F0BE5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2407901C2B8E8123009F0BE5;
+			remoteInfo = "Dragon-Ball-Persistence";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		2407901D2B8E8123009F0BE5 /* Dragon-Ball-Persistence.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dragon-Ball-Persistence.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -86,6 +113,28 @@
 		2448364D2BD47F8400358AA9 /* HerosListController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HerosListController.xib; sourceTree = "<group>"; };
 		244836502BD5525200358AA9 /* HeroListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroListCell.swift; sourceTree = "<group>"; };
 		244836512BD5525200358AA9 /* HeroListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeroListCell.xib; sourceTree = "<group>"; };
+		244D9C3F2C053F6500483D35 /* Dragon-Ball-PersistenceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Dragon-Ball-PersistenceTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		244D9C412C053F6500483D35 /* StoreDataProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreDataProviderTests.swift; sourceTree = "<group>"; };
+		244D9C492C05505F00483D35 /* NSMHero.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSMHero.swift; sourceTree = "<group>"; };
+		244D9C4A2C05505F00483D35 /* NSMLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSMLocation.swift; sourceTree = "<group>"; };
+		244D9C4B2C05505F00483D35 /* NSMTransformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSMTransformation.swift; sourceTree = "<group>"; };
+		244D9C4C2C05505F00483D35 /* StoreDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreDataProvider.swift; sourceTree = "<group>"; };
+		244D9C4E2C05505F00483D35 /* Hero.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hero.swift; sourceTree = "<group>"; };
+		244D9C4F2C05505F00483D35 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		244D9C502C05505F00483D35 /* Transformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transformation.swift; sourceTree = "<group>"; };
+		244D9C522C05505F00483D35 /* ApiProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiProvider.swift; sourceTree = "<group>"; };
+		244D9C532C05505F00483D35 /* SecureDataKeychain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecureDataKeychain.swift; sourceTree = "<group>"; };
+		244D9C552C05505F00483D35 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		244D9C602C057FFC00483D35 /* ApiProviderTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiProviderTest.swift; sourceTree = "<group>"; };
+		244D9C632C069A5F00483D35 /* MockURLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLProtocol.swift; sourceTree = "<group>"; };
+		244D9C652C06B00900483D35 /* MockHeroes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MockHeroes.json; sourceTree = "<group>"; };
+		244D9C692C06B07F00483D35 /* MockLocations.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MockLocations.json; sourceTree = "<group>"; };
+		244D9C6B2C0821FB00483D35 /* MockTransformations.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MockTransformations.json; sourceTree = "<group>"; };
+		244D9C6D2C0A8A6800483D35 /* HeroesViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesViewModelTest.swift; sourceTree = "<group>"; };
+		244D9C6F2C0B697300483D35 /* HeroDetailViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroDetailViewModelTest.swift; sourceTree = "<group>"; };
+		244D9C752C0CDEBF00483D35 /* Dragon-Ball-PersistenceUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Dragon-Ball-PersistenceUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		244D9C772C0CDEC000483D35 /* Dragon_Ball_PersistenceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dragon_Ball_PersistenceUITests.swift; sourceTree = "<group>"; };
+		244D9C792C0CDEC000483D35 /* Dragon_Ball_PersistenceUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dragon_Ball_PersistenceUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		24B95B6D2BD60E1900E6C123 /* TransformationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformationController.swift; sourceTree = "<group>"; };
 		24B95B6E2BD60E1900E6C123 /* TransformationController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransformationController.xib; sourceTree = "<group>"; };
 		24B95BAF2BDC992100E6C123 /* TransformationCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformationCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -106,13 +155,30 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		244D9C3C2C053F6500483D35 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		244D9C722C0CDEBF00483D35 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		240790142B8E8123009F0BE5 = {
 			isa = PBXGroup;
 			children = (
+				244D9C542C05505F00483D35 /* Data */,
 				2407901F2B8E8123009F0BE5 /* Dragon-Ball-Persistence */,
+				244D9C402C053F6500483D35 /* Dragon-Ball-PersistenceTests */,
+				244D9C762C0CDEC000483D35 /* Dragon-Ball-PersistenceUITests */,
 				2407901E2B8E8123009F0BE5 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -121,6 +187,8 @@
 			isa = PBXGroup;
 			children = (
 				2407901D2B8E8123009F0BE5 /* Dragon-Ball-Persistence.app */,
+				244D9C3F2C053F6500483D35 /* Dragon-Ball-PersistenceTests.xctest */,
+				244D9C752C0CDEBF00483D35 /* Dragon-Ball-PersistenceUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -227,6 +295,72 @@
 			path = HeroDetail;
 			sourceTree = "<group>";
 		};
+		244D9C402C053F6500483D35 /* Dragon-Ball-PersistenceTests */ = {
+			isa = PBXGroup;
+			children = (
+				244D9C622C0699CF00483D35 /* Mocks */,
+				244D9C412C053F6500483D35 /* StoreDataProviderTests.swift */,
+				244D9C602C057FFC00483D35 /* ApiProviderTest.swift */,
+				244D9C6D2C0A8A6800483D35 /* HeroesViewModelTest.swift */,
+				244D9C6F2C0B697300483D35 /* HeroDetailViewModelTest.swift */,
+			);
+			path = "Dragon-Ball-PersistenceTests";
+			sourceTree = "<group>";
+		};
+		244D9C4D2C05505F00483D35 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				244D9C482C05505F00483D35 /* Model.xcdatamodeld */,
+				244D9C492C05505F00483D35 /* NSMHero.swift */,
+				244D9C4A2C05505F00483D35 /* NSMLocation.swift */,
+				244D9C4B2C05505F00483D35 /* NSMTransformation.swift */,
+				244D9C4C2C05505F00483D35 /* StoreDataProvider.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		244D9C512C05505F00483D35 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				244D9C4E2C05505F00483D35 /* Hero.swift */,
+				244D9C4F2C05505F00483D35 /* Location.swift */,
+				244D9C502C05505F00483D35 /* Transformation.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		244D9C542C05505F00483D35 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				244D9C4D2C05505F00483D35 /* CoreData */,
+				244D9C512C05505F00483D35 /* Model */,
+				244D9C522C05505F00483D35 /* ApiProvider.swift */,
+				244D9C532C05505F00483D35 /* SecureDataKeychain.swift */,
+			);
+			name = Data;
+			path = "Dragon-Ball-Persistence/Data";
+			sourceTree = "<group>";
+		};
+		244D9C622C0699CF00483D35 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				244D9C632C069A5F00483D35 /* MockURLProtocol.swift */,
+				244D9C652C06B00900483D35 /* MockHeroes.json */,
+				244D9C692C06B07F00483D35 /* MockLocations.json */,
+				244D9C6B2C0821FB00483D35 /* MockTransformations.json */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		244D9C762C0CDEC000483D35 /* Dragon-Ball-PersistenceUITests */ = {
+			isa = PBXGroup;
+			children = (
+				244D9C772C0CDEC000483D35 /* Dragon_Ball_PersistenceUITests.swift */,
+				244D9C792C0CDEC000483D35 /* Dragon_Ball_PersistenceUITestsLaunchTests.swift */,
+			);
+			path = "Dragon-Ball-PersistenceUITests";
+			sourceTree = "<group>";
+		};
 		24B95BB32BDE0C7500E6C123 /* DetailTransformation */ = {
 			isa = PBXGroup;
 			children = (
@@ -261,6 +395,42 @@
 			productReference = 2407901D2B8E8123009F0BE5 /* Dragon-Ball-Persistence.app */;
 			productType = "com.apple.product-type.application";
 		};
+		244D9C3E2C053F6500483D35 /* Dragon-Ball-PersistenceTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 244D9C472C053F6500483D35 /* Build configuration list for PBXNativeTarget "Dragon-Ball-PersistenceTests" */;
+			buildPhases = (
+				244D9C3B2C053F6500483D35 /* Sources */,
+				244D9C3C2C053F6500483D35 /* Frameworks */,
+				244D9C3D2C053F6500483D35 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				244D9C442C053F6500483D35 /* PBXTargetDependency */,
+			);
+			name = "Dragon-Ball-PersistenceTests";
+			productName = "Dragon-Ball-PersistenceTests";
+			productReference = 244D9C3F2C053F6500483D35 /* Dragon-Ball-PersistenceTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		244D9C742C0CDEBF00483D35 /* Dragon-Ball-PersistenceUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 244D9C7D2C0CDEC000483D35 /* Build configuration list for PBXNativeTarget "Dragon-Ball-PersistenceUITests" */;
+			buildPhases = (
+				244D9C712C0CDEBF00483D35 /* Sources */,
+				244D9C722C0CDEBF00483D35 /* Frameworks */,
+				244D9C732C0CDEBF00483D35 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				244D9C7C2C0CDEC000483D35 /* PBXTargetDependency */,
+			);
+			name = "Dragon-Ball-PersistenceUITests";
+			productName = "Dragon-Ball-PersistenceUITests";
+			productReference = 244D9C752C0CDEBF00483D35 /* Dragon-Ball-PersistenceUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -268,11 +438,19 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1520;
+				LastSwiftUpdateCheck = 1540;
 				LastUpgradeCheck = 1520;
 				TargetAttributes = {
 					2407901C2B8E8123009F0BE5 = {
 						CreatedOnToolsVersion = 15.2;
+					};
+					244D9C3E2C053F6500483D35 = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = 2407901C2B8E8123009F0BE5;
+					};
+					244D9C742C0CDEBF00483D35 = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = 2407901C2B8E8123009F0BE5;
 					};
 				};
 			};
@@ -294,6 +472,8 @@
 			projectRoot = "";
 			targets = (
 				2407901C2B8E8123009F0BE5 /* Dragon-Ball-Persistence */,
+				244D9C3E2C053F6500483D35 /* Dragon-Ball-PersistenceTests */,
+				244D9C742C0CDEBF00483D35 /* Dragon-Ball-PersistenceUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -318,6 +498,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		244D9C3D2C053F6500483D35 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				244D9C6A2C06B07F00483D35 /* MockLocations.json in Resources */,
+				244D9C662C06B00900483D35 /* MockHeroes.json in Resources */,
+				244D9C6C2C0821FB00483D35 /* MockTransformations.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		244D9C732C0CDEBF00483D35 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -331,22 +528,22 @@
 				24B95BB92BDE0ED500E6C123 /* TransformationViewModel.swift in Sources */,
 				2448363C2BD31BA200358AA9 /* HeroAnnotation.swift in Sources */,
 				240790382B8EA473009F0BE5 /* LoginController.swift in Sources */,
+				244D9C572C05505F00483D35 /* NSMHero.swift in Sources */,
 				240790212B8E8123009F0BE5 /* AppDelegate.swift in Sources */,
 				24E55AAD2B912DBA00EFA8FD /* LoginViewModel.swift in Sources */,
 				244836532BD5525200358AA9 /* HeroListCell.swift in Sources */,
 				243066342B9DF69B0051446D /* Transformation.swift in Sources */,
 				243066262B9CF4240051446D /* NSMLocation.swift in Sources */,
 				243066322B9DF6860051446D /* Location.swift in Sources */,
-				2430662A2B9CF4240051446D /* NSMHero.swift in Sources */,
 				2448363E2BD31BE500358AA9 /* HeroAnnotationView.swift in Sources */,
 				2430661F2B9CB2BE0051446D /* Model.xcdatamodeld in Sources */,
+				244D9C5B2C05505F00483D35 /* Hero.swift in Sources */,
 				2430662D2B9CF6A90051446D /* StoreDataProvider.swift in Sources */,
 				24B95BB62BDE0CBF00E6C123 /* TransformationViewController.swift in Sources */,
 				2448364F2BD47F8400358AA9 /* HerosListController.swift in Sources */,
 				240790412B8EA556009F0BE5 /* ApiProvider.swift in Sources */,
 				24B95BB12BDC992100E6C123 /* TransformationCollectionViewCell.swift in Sources */,
 				244836352BD3095A00358AA9 /* HeroesViewModel.swift in Sources */,
-				243066302B9DF6700051446D /* Hero.swift in Sources */,
 				2448363A2BD30F9C00358AA9 /* HeroDetailViewController.swift in Sources */,
 				24B95B6F2BD60E1900E6C123 /* TransformationController.swift in Sources */,
 				244836402BD31C4800358AA9 /* HeroDetailViewModel.swift in Sources */,
@@ -356,7 +553,41 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		244D9C3B2C053F6500483D35 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				244D9C642C069A5F00483D35 /* MockURLProtocol.swift in Sources */,
+				244D9C422C053F6500483D35 /* StoreDataProviderTests.swift in Sources */,
+				244D9C702C0B697300483D35 /* HeroDetailViewModelTest.swift in Sources */,
+				244D9C6E2C0A8A6800483D35 /* HeroesViewModelTest.swift in Sources */,
+				244D9C612C057FFC00483D35 /* ApiProviderTest.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		244D9C712C0CDEBF00483D35 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				244D9C7A2C0CDEC000483D35 /* Dragon_Ball_PersistenceUITestsLaunchTests.swift in Sources */,
+				244D9C782C0CDEC000483D35 /* Dragon_Ball_PersistenceUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		244D9C442C053F6500483D35 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2407901C2B8E8123009F0BE5 /* Dragon-Ball-Persistence */;
+			targetProxy = 244D9C432C053F6500483D35 /* PBXContainerItemProxy */;
+		};
+		244D9C7C2C0CDEC000483D35 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2407901C2B8E8123009F0BE5 /* Dragon-Ball-Persistence */;
+			targetProxy = 244D9C7B2C0CDEC000483D35 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		2407902B2B8E8125009F0BE5 /* LaunchScreen.storyboard */ = {
@@ -545,6 +776,80 @@
 			};
 			name = Release;
 		};
+		244D9C452C053F6500483D35 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LF68Z3YD8E;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.covezcorp.SecureDex.Dragon-Ball-PersistenceTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Dragon-Ball-Persistence.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Dragon-Ball-Persistence";
+			};
+			name = Debug;
+		};
+		244D9C462C053F6500483D35 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LF68Z3YD8E;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.covezcorp.SecureDex.Dragon-Ball-PersistenceTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Dragon-Ball-Persistence.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Dragon-Ball-Persistence";
+			};
+			name = Release;
+		};
+		244D9C7E2C0CDEC000483D35 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LF68Z3YD8E;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.covezcorp.SecureDex.Dragon-Ball-PersistenceUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Dragon-Ball-Persistence";
+			};
+			name = Debug;
+		};
+		244D9C7F2C0CDEC000483D35 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LF68Z3YD8E;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.covezcorp.SecureDex.Dragon-Ball-PersistenceUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Dragon-Ball-Persistence";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -562,6 +867,24 @@
 			buildConfigurations = (
 				240790322B8E8125009F0BE5 /* Debug */,
 				240790332B8E8125009F0BE5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		244D9C472C053F6500483D35 /* Build configuration list for PBXNativeTarget "Dragon-Ball-PersistenceTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				244D9C452C053F6500483D35 /* Debug */,
+				244D9C462C053F6500483D35 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		244D9C7D2C0CDEC000483D35 /* Build configuration list for PBXNativeTarget "Dragon-Ball-PersistenceUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				244D9C7E2C0CDEC000483D35 /* Debug */,
+				244D9C7F2C0CDEC000483D35 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -608,6 +931,17 @@
 			);
 			currentVersion = 2430661E2B9CB2BE0051446D /* Model.xcdatamodel */;
 			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+		244D9C482C05505F00483D35 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				244D9C552C05505F00483D35 /* Model.xcdatamodel */,
+			);
+			currentVersion = 244D9C552C05505F00483D35 /* Model.xcdatamodel */;
+			name = Model.xcdatamodeld;
+			path = "/Users/Cristo/Documents/BootcampKeepcoding/1.2 Practicas/Dragon-Ball-Persistence/Dragon-Ball-Persistence/Data/CoreData/Model.xcdatamodeld";
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

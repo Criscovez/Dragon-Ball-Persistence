@@ -14,6 +14,7 @@ enum LoginState {
     case failed
     case showErrorEmail
     case showErrorPassword
+    case showErrorEmailPassword
 }
 
 
@@ -28,10 +29,20 @@ final class LoginViewModel {
     }
     
     func validateLoginData(email: String?, password: String?) -> Bool {
+        print(isValid(email: email!))
+        print(isValid(password: password!))
+        
+        if  !isValid(email: email!) &&  !isValid(password: password!) {
+                    self.loginStateChanged?(.showErrorEmailPassword)
+            return false
+                }
+        
         guard let email = email, isValid(email: email) else {
             self.loginStateChanged?(.showErrorEmail)
             return false
         }
+        
+
         
 
         guard let password = password, isValid(password: password) else {

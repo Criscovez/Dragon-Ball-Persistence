@@ -9,9 +9,22 @@ import Foundation
 
 enum DragonballError : Error {
     case server(error: Error)
-    case parsingData
     case statusCode(code: Int)
-}
+    case noData
+    case parsingData
+    
+    var description: String {
+        switch self {
+        case .server(let error):
+            return error.localizedDescription
+        case .statusCode(let code):
+            return "Received error status code \(code)"
+        case .noData:
+            return "No Data received from service"
+        case .parsingData:
+            return "Error parsing data"
+        }
+    }}
 //enum GAFError: Error, CustomStringConvertible {
 //    case service(error: Error)
 //    case statusCode(code: Int)
@@ -221,13 +234,14 @@ struct RequestProvider {
         func getHeroesWith(name: String? = nil, completion: @escaping (Result<[Hero], DragonballError>) -> Void) {
             
             //TODO: - MAnage error getting token
-            guard let token = secureData.getToken() else {
-                //completion(.failure(.noToken))
-                print("Error Token hero")
-                return
-            }
+//            guard let token = secureData.getToken() else {
+//                //completion(.failure(.noToken))
+//                print("Error Token hero")
+//                return
+//            }
+            
+            let token = secureData.getToken() ?? ""
             print("token: \(token)")
-            //let token = secureData.getToken()!
             let request = requestProvider.requestFor(endPoint: .heroes, token: token, params: ["name": name ?? ""])
             makeDataRequestfor(request: request, completion: completion)
         }
@@ -235,13 +249,14 @@ struct RequestProvider {
         func getLocationsForHeroWith(id: String,
                                      completion: @escaping (Result<[Location], DragonballError>) -> Void) {
             //TODO: - MAnage error getting token
-            guard let token = secureData.getToken() else {
-                //completion(.failure(.noToken))
-                print("Error Token location")
-                return
-            }
+//            guard let token = secureData.getToken() else {
+//                //completion(.failure(.noToken))
+//                print("Error Token location")
+//                return
+//            }
+            
+            let token = secureData.getToken() ?? ""
             print("token: \(token)")
-            //let token = secureData.getToken()!
             let request = requestProvider.requestFor(endPoint: .locations, token: token, params: ["id": id])
             makeDataRequestfor(request: request, completion: completion)
         }
@@ -249,13 +264,13 @@ struct RequestProvider {
         func getTransformationsForHeroWith(id: String,
                                            completion: @escaping (Result<[Transformation], DragonballError>) -> Void) {
             //TODO: - MAnage error getting token
-            guard let token = secureData.getToken() else {
-                //completion(.failure(.noToken))
-                print("Error Token transformation")
-                return
-            }
-            print("token: \(token)")
-            //let token = secureData.getToken()!
+//            guard let token = secureData.getToken() else {
+//                //completion(.failure(.noToken))
+//                print("Error Token transformation")
+//                return
+//            }
+            //print("token: \(token)")
+            let token = secureData.getToken() ?? ""
             let request = requestProvider.requestFor(endPoint: .transformations, token: token, params: ["id": id])
             makeDataRequestfor(request: request, completion: completion)
         }
@@ -327,6 +342,17 @@ extension ApiProvider {
             
             //TODO: - MAange Status Code error
             
+            if let error {
+                completion(.failure(.server(error: error)))
+                return
+            }
+            
+            if let statusCode = (response as? HTTPURLResponse)?.statusCode,
+               statusCode != 200 {
+                completion(.failure(.statusCode(code: statusCode)))
+                return
+            }
+            
             if let data {
                 if let token = String(data: data, encoding: .utf8) {
                     self.secureData.setToken(value: token)
@@ -347,6 +373,17 @@ extension ApiProvider {
             //TODO: - Manage Server Error
             
             //TODO: - MAange Status Code error
+            
+            if let error {
+                completion(.failure(.server(error: error)))
+                return
+            }
+            
+            if let statusCode = (response as? HTTPURLResponse)?.statusCode,
+               statusCode != 200 {
+                completion(.failure(.statusCode(code: statusCode)))
+                return
+            }
             
             if let data {
                 do {

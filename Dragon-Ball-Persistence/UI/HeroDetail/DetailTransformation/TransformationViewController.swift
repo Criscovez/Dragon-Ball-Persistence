@@ -35,7 +35,7 @@ class TransformationViewController: UIViewController {
         print(viewModel.getDescription())
         labelTitle.text = viewModel.getTitle()
         labelDescription.text = viewModel.getDescription()
-        print(labelDescription.text)
+        print(labelDescription.text!)
     }
 
 

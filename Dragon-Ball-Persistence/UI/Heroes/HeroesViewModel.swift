@@ -166,7 +166,7 @@ class HeroesViewModel {
 //        group.notify(queue: .main) {
 //            self.notifyDataUpdated()
 //        }
-        self.notifyDataUpdated()
+        //self.notifyDataUpdated()
     }
     
     private func sortDescriptor(ascending: Bool = true) -> [NSSortDescriptor] {

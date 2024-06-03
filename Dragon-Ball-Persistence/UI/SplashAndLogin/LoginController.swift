@@ -34,6 +34,7 @@ class LoginController: UIViewController {
     }
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         navigationController?.isNavigationBarHidden = true
         
@@ -54,15 +55,20 @@ class LoginController: UIViewController {
                 print("failed")
                 DispatchQueue.main.async {
                     self?.activityIndicator.stopAnimating()
+                    self?.showMessage("Error! Password o usuario incorrecto")
                 }
             case .loading:
                 self?.activityIndicator.startAnimating()
             case .showErrorEmail:
                 
                 self?.errorEmail.isHidden = false
-                
+                self?.errorPassword.isHidden = true
             case .showErrorPassword:
                 
+                self?.errorPassword.isHidden = false
+                self?.errorEmail.isHidden = true
+            case .showErrorEmailPassword:
+                self?.errorEmail.isHidden = false
                 self?.errorPassword.isHidden = false
             }
         }
