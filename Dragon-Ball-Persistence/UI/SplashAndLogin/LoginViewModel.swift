@@ -29,8 +29,8 @@ final class LoginViewModel {
     }
     
     func validateLoginData(email: String?, password: String?) -> Bool {
-        print(isValid(email: email!))
-        print(isValid(password: password!))
+        //print(isValid(email: email!))
+        //print(isValid(password: password!))
         
         if  !isValid(email: email!) &&  !isValid(password: password!) {
                     self.loginStateChanged?(.showErrorEmailPassword)
@@ -68,7 +68,7 @@ final class LoginViewModel {
             switch result {
             case .success(_):
                 DispatchQueue.main.async {
-                    print("resultado: \(result)")
+                    //print("resultado: \(result)")
                     self?.loginStateChanged?(.success)
                 }
             case .failure(let error):

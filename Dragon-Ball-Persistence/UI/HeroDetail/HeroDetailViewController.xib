@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Map view configurations" minToolsVersion="14.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -12,6 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HeroDetailViewController" customModule="Dragon_Ball_Persistence" customModuleProvider="target">
             <connections>
                 <outlet property="labelDescription" destination="Ptx-Fj-lsa" id="pMG-SZ-ffj"/>
+                <outlet property="loading" destination="hfJ-cA-zCp" id="p59-V2-G6V"/>
                 <outlet property="mapView" destination="R88-Sa-Hk1" id="eWg-Vf-teg"/>
                 <outlet property="transformationsCollectionView" destination="dXS-1U-9b9" id="VP6-S5-osa"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -66,10 +67,14 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="hfJ-cA-zCp">
+                    <rect key="frame" x="178" y="407.66666666666669" width="37" height="37"/>
+                </activityIndicatorView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="hfJ-cA-zCp" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="3EE-UP-nzw"/>
                 <constraint firstItem="Ptx-Fj-lsa" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="5o4-Jq-MXX"/>
                 <constraint firstItem="dXS-1U-9b9" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="HDX-2v-qB9"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Ptx-Fj-lsa" secondAttribute="trailing" constant="16" id="MpW-Zg-R7q"/>
@@ -77,6 +82,7 @@
                 <constraint firstItem="grC-eN-QWX" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="PMg-VU-PYd"/>
                 <constraint firstItem="grC-eN-QWX" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="QdJ-a0-pCz"/>
                 <constraint firstItem="R88-Sa-Hk1" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Sbq-Zp-L6u"/>
+                <constraint firstItem="hfJ-cA-zCp" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="gre-2f-Yc2"/>
                 <constraint firstItem="dXS-1U-9b9" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="hY4-pq-3pM"/>
                 <constraint firstItem="dXS-1U-9b9" firstAttribute="top" secondItem="Ptx-Fj-lsa" secondAttribute="bottom" id="hlJ-Qa-j5Y"/>
                 <constraint firstItem="Ptx-Fj-lsa" firstAttribute="top" secondItem="R88-Sa-Hk1" secondAttribute="bottom" id="mSv-ag-KVj"/>

@@ -13,7 +13,7 @@ protocol StoreDataProviderProtocol {
     func fetchHeroes(filter: NSPredicate?, sorting:[NSSortDescriptor]?) -> [NSMHero]
     func countHeroes() -> Int
     func insert(transformations: [Transformation])
-    func fetchTransformations() -> [NSMTransformation]
+    func fetchTransformations(filter: NSPredicate?, sorting:[NSSortDescriptor]?) -> [NSMTransformation]
     func insert(locations: [Location])
     func fetchLocations() -> [NSMLocation]
     func cleanBBDD()
@@ -127,8 +127,16 @@ extension StoreDataProvider {
         saveContext()
     }
     
-    func fetchTransformations() -> [NSMTransformation] {
+    func fetchTransformations(filter: NSPredicate? = nil, sorting: [NSSortDescriptor]? = nil) -> [NSMTransformation] {
         let request = NSMTransformation.fetchRequest()
+        request.predicate = filter
+        if sorting == nil {
+            let sort = NSSortDescriptor(key: "name", ascending: true)
+            request.sortDescriptors = [sort]
+        } else {
+            request.sortDescriptors = sorting
+        }
+        
         do {
             return try moc.fetch(request)
         } catch {

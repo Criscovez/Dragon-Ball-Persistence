@@ -24,13 +24,14 @@ class SplashViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         var destination: UIViewController
-        if let token = secureData.getToken() {
+        //token = secureData.getToken()
+        if let _ = secureData.getToken() {
             destination = HerosListController(viewModel: HeroesViewModel(storeDataProvider: storeDataProvider))
         } else {
             destination = LoginController(storeDataProvider: storeDataProvider)

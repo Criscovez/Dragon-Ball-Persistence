@@ -9,6 +9,8 @@ import UIKit
 
 class HerosListController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
+    
+    @IBOutlet weak var loading: UIActivityIndicatorView!
     private var viewModel: HeroesViewModel
     
     private var secureData: SecureDataProtocol
@@ -26,16 +28,25 @@ class HerosListController: UIViewController {
     func configureUI() {
         let nib = UINib(nibName: String(describing: HeroListCell.self), bundle: nil)
         collectionView.register(nib, forCellWithReuseIdentifier: HeroListCell.reuseIdentifier)
-//        print("\(HeroListCell.reuseIdentifier)1")
-//        print("\(String(describing: HeroListCell.self))2")
         navigationItem.title = "Lista de Heroes"
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
-        viewModel.dataUpdated = {
-            self.collectionView.reloadData()
+        viewModel.stateChanged = { [weak self] state in
+            switch state {
+                
+            case .loading:
+                self?.loading.startAnimating()
+            case .updated:
+                self?.loading.stopAnimating()
+                self?.collectionView.reloadData()
+            case .error(let error):
+                self?.loading.stopAnimating()
+                debugPrint(error)
+            }
+            self?.collectionView.reloadData()
         }
         viewModel.loadData()
         navigationController?.isNavigationBarHidden = true
@@ -45,21 +56,12 @@ class HerosListController: UIViewController {
     
     @IBAction func logoutTapped(_ sender: Any) {
         secureData.deleteToken()
+        viewModel.storeDataProvider.cleanBBDD()
         navigationController?.popToRootViewController(animated: true)
     }
     
-    }
+}
 
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 extension HerosListController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
@@ -83,7 +85,6 @@ extension HerosListController: UICollectionViewDataSource, UICollectionViewDeleg
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let hero = viewModel.heroAt(indexPath: indexPath) else { return }
-        //let herox = Hero(id: "D13A40E5-4418-4223-9CE6-D2F9A28EBE94", name: "Goku", description: "", photo: "", favorite: true)
         let viewModel = HeroDetailViewModel(hero: hero, storeDataProvider: viewModel.storeDataProvider)
         let detailVC = HeroDetailViewController(viewModel: viewModel)
         navigationController?.pushViewController(detailVC, animated: true)

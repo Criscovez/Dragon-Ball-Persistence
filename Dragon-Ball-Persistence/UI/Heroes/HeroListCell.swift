@@ -15,7 +15,7 @@ class HeroListCell: UICollectionViewCell {
     @IBOutlet weak var labelName: UILabel!
     
     static var reuseIdentifier: String {
-        print(String(describing:self))
+        //print(String(describing:self))
         return String(describing:self)
     }
     

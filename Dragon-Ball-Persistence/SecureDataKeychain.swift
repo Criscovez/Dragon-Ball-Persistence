@@ -32,21 +32,4 @@ class SecureDataKeychain: SecureDataProtocol {
     }
 }
 
-// SecureDataProtocol con Userdefaults para Testing
-class SecureDataUserDefaults: SecureDataProtocol {
-    
-    private let userDefaults = UserDefaults.standard
-    private let keyToken = "keyToken"
-    
-    func setToken(value: String) {
-        userDefaults.setValue(value, forKey: keyToken)
-    }
-    
-    func getToken() -> String? {
-        userDefaults.value(forKey: keyToken) as? String
-    }
-    
-    func deleteToken() {
-        userDefaults.removeObject(forKey: keyToken)
-    }
-}
+

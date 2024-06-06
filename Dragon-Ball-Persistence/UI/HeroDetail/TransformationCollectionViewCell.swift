@@ -33,8 +33,6 @@ class TransformationCollectionViewCell: UICollectionViewCell {
     }
     
     
-    //imageView.kf.setImage(with: url, placeholder: nil, options: [.processor(processor)])
-    
     func configureWith(model: TransformationCellModel) {
         nameTransformation.text = model.name
         if let photo = model.photo {

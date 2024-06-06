@@ -11,6 +11,7 @@ import CoreLocation
 
 class HeroDetailViewController: UIViewController {
 
+    @IBOutlet weak var loading: UIActivityIndicatorView!
     @IBOutlet weak var mapView: MKMapView!
     
     @IBOutlet weak var labelDescription: UILabel!
@@ -56,7 +57,13 @@ class HeroDetailViewController: UIViewController {
         viewModel.stateChanged = { [weak self] state in
             switch state {
             case .updated:
+                self?.loading.stopAnimating()
                 self?.updateDataInterface()
+            case .loading:
+                self?.loading.startAnimating()
+            case .error(let error):
+                self?.loading.stopAnimating()
+                debugPrint(error)
             }
         }
     }
@@ -109,17 +116,7 @@ class HeroDetailViewController: UIViewController {
         }
     }
 
-    @IBAction func btnDetailTapped(_ sender: Any) {
-        let transformationvc = TransformationController()
-        
-        //Podemos definir donde para al presentar el controller de forma modal.
-        let sheetvc = transformationvc.sheetPresentationController
-        sheetvc?.detents = [.medium(), .large()]
-        
-        
-        //Presenta de forma modal un controller
-        self.present(transformationvc, animated: true)
-    }
+
 }
 
 
@@ -176,21 +173,8 @@ extension HeroDetailViewController: UICollectionViewDataSource, UICollectionView
         
         self.present(transformationvc, animated: true)
         
-//        let transformationvc = TransformationController()
-//        
-//        //Podemos definir donde para al presentar el controller de forma modal.
-//        let sheetvc = transformationvc.sheetPresentationController
-//        sheetvc?.detents = [.medium(), .large()]
-//        
-//        
-//        //Presenta de forma modal un controller
-//        self.present(transformationvc, animated: true)
     }
-    
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        return CGSize(width: collectionView.bounds.size.width / 2, height: collectionView.bounds.size.height)
-//    }
-    
+   
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.bounds.size.width, height: 200)
    }

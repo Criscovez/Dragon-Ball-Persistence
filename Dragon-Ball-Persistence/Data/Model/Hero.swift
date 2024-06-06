@@ -13,7 +13,5 @@ struct Hero: Decodable {
     var description: String?
     var photo: String?
     var favorite: Bool?
-    //var locations: Location?
-    //var transformation: Transformation?
-    
+
 }

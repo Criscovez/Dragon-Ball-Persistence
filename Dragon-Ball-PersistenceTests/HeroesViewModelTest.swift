@@ -38,14 +38,6 @@ final class HeroesViewModelTest: XCTestCase {
             let url = try XCTUnwrap(request.url)
             //Como hay 2 llamadas a servicios en el viewModel, necesitamso saber cuales son para determinar como crear el Data
             // para handler nos apoyamos en la lastComponet, para saber a que servicio se está llamando y crear Data de forma correcta
-//            var mockFile = ""
-//            print(url.lastPathComponent)
-//            if url.lastPathComponent == "all" {
-//                
-//                mockFile = "MockHeroes"
-//            } else {
-//                mockFile = "MockLocations"
-//            }
             
             //Obtenemos el Bundle de target de Test, la url del fichero json y creamos Data
             let bundle = Bundle(for: type(of: self))
@@ -60,17 +52,26 @@ final class HeroesViewModelTest: XCTestCase {
         //When
         //Creamos al eexpectation y llamamos a loadData. Antes hay que crear el closure para loadData
         let expectation = expectation(description: "ViewModel load Heroes and Developers")
-        sut.dataUpdated = { [weak self] in
+        sut.stateChanged = { [weak self] state in
             //Testamso la información recuperada por el ViewModel
-            XCTAssertEqual(self?.sut.numberOfHeroes(), 16)
-            let indexPath = IndexPath(row: 0, section: 0)
-            let hero = self?.sut.heroAt(indexPath:indexPath)
-            XCTAssertEqual(hero?.name, "Vegeta")
-            XCTAssertEqual(hero?.id, "6E1B907C-EB3A-45BA-AE03-44FA251F64E9")
-            
-            //XCTAssertEqual(hero?.transformations.count, 13)
-            
-            expectation.fulfill()
+          
+            switch state {
+
+            case .loading:
+                print("loading")
+            case .updated:
+                XCTAssertEqual(self?.sut.numberOfHeroes(), 16)
+                let indexPath = IndexPath(row: 0, section: 0)
+                let hero = self?.sut.heroAt(indexPath:indexPath)
+                XCTAssertEqual(hero?.name, "Vegeta")
+                XCTAssertEqual(hero?.id, "6E1B907C-EB3A-45BA-AE03-44FA251F64E9")
+                
+                //XCTAssertEqual(hero?.transformations.count, 13)
+                
+                expectation.fulfill()
+            case .error(_):
+                print("error")
+            }
         }
         sut.loadData()
 

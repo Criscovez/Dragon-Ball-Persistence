@@ -68,16 +68,29 @@ final class HeroDetailViewModelTest: XCTestCase {
         //Creamos al eexpectation y llamamos a loadData. Antes hay que crear el closure para loadData
         let expectation = expectation(description: "ViewModel load Heroes and Developers")
         
-        sut.stateChanged = { [weak self] _ in
+        sut.stateChanged = { [weak self] state in
             //Testamso la información recuperada por el ViewModel
-            XCTAssertEqual(self?.sut.numberOfTransformations(), 14)
-            let indexPath = IndexPath(row: 0, section: 0)
-            let trasformation = self?.sut.transformationAt(indexPath:indexPath)
-            XCTAssertEqual(trasformation?.name, "1. Oozaru – Gran Mono")
-            XCTAssertEqual(trasformation?.id, "17824501-1106-4815-BC7A-BFDCCEE43CC9")
-            XCTAssertEqual(trasformation?.hero?.transformations.count,  14)
             
-            expectation.fulfill()
+            switch state {
+                
+            case .loading:
+                print("loading")
+                
+            case .updated:
+                
+                XCTAssertEqual(self?.sut.numberOfTransformations(), 14)
+                let indexPath = IndexPath(row: 0, section: 0)
+                let trasformation = self?.sut.transformationAt(indexPath:indexPath)
+                XCTAssertEqual(trasformation?.name, "1. Oozaru – Gran Mono")
+                XCTAssertEqual(trasformation?.id, "17824501-1106-4815-BC7A-BFDCCEE43CC9")
+                XCTAssertEqual(trasformation?.hero?.transformations.count,  14)
+                
+                expectation.fulfill()
+                
+            case .error(_):
+                print("error")
+            }
+
         }
         sut.loadData()
 

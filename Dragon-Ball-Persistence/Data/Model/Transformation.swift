@@ -7,13 +7,6 @@
 
 import Foundation
 
-//struct Transformation: Decodable {
-//    var id: String?
-//    var info: String?
-//    var name: String?
-//    var photo: String?
-//    var hero: Hero?
-//}
 
 struct Transformation: Decodable {
     let id: String?

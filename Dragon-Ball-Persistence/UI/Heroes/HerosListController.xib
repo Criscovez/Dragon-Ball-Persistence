@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HerosListController" customModule="Dragon_Ball_Persistence" customModuleProvider="target">
             <connections>
                 <outlet property="collectionView" destination="dTP-NM-7DG" id="USB-IQ-jGg"/>
+                <outlet property="loading" destination="XWo-9O-7MS" id="HLf-kj-BQP"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -41,6 +42,10 @@
                         <action selector="logoutTapped:" destination="-1" eventType="touchUpInside" id="p3y-HS-8nG"/>
                     </connections>
                 </button>
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="XWo-9O-7MS">
+                    <rect key="frame" x="178" y="407.66666666666669" width="37" height="37"/>
+                    <color key="color" systemColor="labelColor"/>
+                </activityIndicatorView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -48,7 +53,9 @@
                 <constraint firstItem="dTP-NM-7DG" firstAttribute="top" secondItem="wKI-UK-hCu" secondAttribute="bottom" id="2go-CL-NqO"/>
                 <constraint firstItem="wKI-UK-hCu" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="3oU-kH-qRm"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="dTP-NM-7DG" secondAttribute="bottom" id="FYf-aY-iw0"/>
+                <constraint firstItem="XWo-9O-7MS" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="HmH-gi-IyH"/>
                 <constraint firstItem="dTP-NM-7DG" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="dll-C9-ifr"/>
+                <constraint firstItem="XWo-9O-7MS" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="g2c-ID-3Mw"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="wKI-UK-hCu" secondAttribute="trailing" constant="16" id="gsY-sM-8C4"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="dTP-NM-7DG" secondAttribute="trailing" id="uCL-39-D8l"/>
             </constraints>
@@ -56,6 +63,9 @@
         </view>
     </objects>
     <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

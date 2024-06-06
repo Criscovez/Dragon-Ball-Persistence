@@ -24,10 +24,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="51Q-WC-byG">
-                    <rect key="frame" x="16" y="345" width="361" height="162.33333333333337"/>
+                    <rect key="frame" x="16" y="341" width="361" height="170.33333333333337"/>
                     <subviews>
-                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="IHU-l5-JZv">
-                            <rect key="frame" x="0.0" y="0.0" width="361" height="96"/>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="IHU-l5-JZv">
+                            <rect key="frame" x="0.0" y="0.0" width="361" height="104"/>
                             <subviews>
                                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Srl-AZ-CwZ">
                                     <rect key="frame" x="0.0" y="0.0" width="361" height="44"/>
@@ -38,21 +38,21 @@
                                     <textInputTraits key="textInputTraits" textContentType="email"/>
                                 </textField>
                                 <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sU9-U1-h3G">
-                                    <rect key="frame" x="0.0" y="48" width="361" height="0.0"/>
+                                    <rect key="frame" x="0.0" y="52" width="361" height="0.0"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                     <color key="textColor" red="0.85198767009999998" green="0.12941176469999999" blue="0.1176470588" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1SV-LI-OIK">
-                                    <rect key="frame" x="0.0" y="52" width="361" height="44"/>
+                                    <rect key="frame" x="0.0" y="60" width="361" height="44"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="44" id="cs6-aB-nLr"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits" textContentType="password"/>
+                                    <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                 </textField>
                                 <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nLN-aB-1rs">
-                                    <rect key="frame" x="0.0" y="96" width="361" height="0.0"/>
+                                    <rect key="frame" x="0.0" y="104" width="361" height="0.0"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                     <color key="textColor" red="0.85198767009999998" green="0.12941176469999999" blue="0.1176470588" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <nil key="highlightedColor"/>
@@ -60,7 +60,7 @@
                             </subviews>
                         </stackView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="klj-UR-CJa">
-                            <rect key="frame" x="0.0" y="127.99999999999999" width="361" height="34.333333333333329"/>
+                            <rect key="frame" x="0.0" y="136" width="361" height="34.333333333333343"/>
                             <state key="normal" title="Button"/>
                             <buttonConfiguration key="configuration" style="filled" title="Button">
                                 <color key="baseBackgroundColor" red="0.93725490199999995" green="0.5568627451" blue="0.20392156859999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

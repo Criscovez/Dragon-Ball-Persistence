@@ -59,6 +59,7 @@ class LoginController: UIViewController {
                 }
             case .loading:
                 self?.activityIndicator.startAnimating()
+                
             case .showErrorEmail:
                 
                 self?.errorEmail.isHidden = false
